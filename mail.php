@@ -1,11 +1,9 @@
 <?php
     $to = 'ediztekok@gmail.com';
-    $firstname = $_POST["fname"];
+    $name = $_POST["name"];
     $email= $_POST["email"];
-    $text= $_POST["message"];
-    $phone= $_POST["phone"];
-    
-
+    $subject= $_POST["subject"];
+    $msg = $_POST["message"];
 
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= "From: " . $email . "\r\n"; // Sender's E-mail
@@ -13,12 +11,14 @@
 
     $message ='<table style="width:100%">
         <tr>
-            <td>'.$firstname.'  '.$laststname.'</td>
+            <td>Name: '.$name.'</td>
         </tr>
-        <tr><td>Email: '.$email.'</td></tr>
-        <tr><td>phone: '.$phone.'</td></tr>
-        <tr><td>Text: '.$text.'</td></tr>
-        
+        <tr>
+	    <td>Email: '.$email.'</td>
+        </tr>
+        <tr>
+	    <td>Message: '.$msg.'</td>
+        </tr>
     </table>';
 
     if (@mail($to, $email, $message, $headers))
