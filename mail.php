@@ -4,6 +4,7 @@
     $email= strip_tags($_POST["email"]);
     $subject= strip_tags($_POST["subject"]);
     $msg = strip_tags($_POST["message"]);
+    $spam_detect = strip_tags($_POST["email2"]);
 
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= "From: " . $email . "\r\n"; // Sender's E-mail
@@ -22,6 +23,9 @@
 
     if (empty($name) or empty($email) or empty($subject) or empty($msg)){
             echo "Invalid input!";
+    }
+    else if (!empty($spam_detect)){
+        echo "Be gone, spammer!";
     }
     else{
         if (@mail($to, $subject, $message, $headers))
