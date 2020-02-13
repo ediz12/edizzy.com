@@ -2637,3 +2637,29 @@ h6 {
 .switch-wrap p {
   margin: 0;
 }
+
+.project-image {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none;
+  }
+
+  .hidden-sm {
+    display: block;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hidden-lg {
+    display: block;
+  }
+
+  .hidden-sm {
+    display: none;
+  }
+
+}
